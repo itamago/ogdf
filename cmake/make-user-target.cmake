@@ -1,7 +1,7 @@
 # Compilation of executables that use OGDF
 function(make_user_target TARGET)
   add_ogdf_extra_flags(${TARGET})
-  target_compile_features(${TARGET} PUBLIC cxx_range_for)
+  # target_compile_features(${TARGET} PUBLIC cxx_range_for)
   target_include_directories(${TARGET} BEFORE PUBLIC ${CMAKE_BINARY_DIR}/include)
   target_link_libraries(${TARGET} OGDF)
   if(SHOW_STACKTRACE)

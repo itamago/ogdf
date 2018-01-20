@@ -7,29 +7,28 @@ list(INSERT CMAKE_MODULE_PATH 0 "${module_dir}" )
 include_directories(include)
 
 # build type configuration
-set(BUILD_TYPES Debug Release)
-if(CMAKE_CONFIGURATION_TYPES)
-  set(CMAKE_CONFIGURATION_TYPES ${BUILD_TYPES} CACHE STRING "" FORCE)
-else()
-  if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Type of build to be created." FORCE)
-  endif()
-  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS ${BUILD_TYPES})
-endif()
-set(CMAKE_CXX_STANDARD 11)
+# set(BUILD_TYPES Debug Release)
+# if(CMAKE_CONFIGURATION_TYPES)
+#   set(CMAKE_CONFIGURATION_TYPES ${BUILD_TYPES} CACHE STRING "" FORCE)
+# else()
+#   if(NOT CMAKE_BUILD_TYPE)
+#     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Type of build to be created." FORCE)
+#   endif()
+#   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS ${BUILD_TYPES})
+# endif()
 
-include(compiler-specifics)
+# set(CMAKE_CXX_STANDARD 17)
+
+# include(compiler-specifics)
 include(group-files)
 include(coin)
 include(ogdf)
 
-include(make-user-target)
-include(tests)
-include(examples)
-
-include(doc)
-
-add_custom_target(build-all DEPENDS OGDF tests examples)
+# include(make-user-target)
+# include(tests)
+# include(examples)
+# include(doc)
+# add_custom_target(build-all DEPENDS OGDF tests examples)
 
 # create autogen header
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/ogdf/basic/internal")

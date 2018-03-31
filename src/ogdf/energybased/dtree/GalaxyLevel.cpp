@@ -136,7 +136,9 @@ GalaxyLevel* GalaxyLevel::buildNextCoarserLevel(int numLabels)
 	m_pGraph->allNodes(sortedOrder);
 
 	// shuffle them to avoid artifacts from the initial order
-	std::random_shuffle(sortedOrder.begin(), sortedOrder.end());
+	std::random_device rng;
+	std::mt19937 urng(rng());
+	std::shuffle(sortedOrder.begin(), sortedOrder.end(), urng);
 
 	// sort them, we want the suns with low weight
 	std::sort(sortedOrder.begin(), sortedOrder.end(), SunWeightComparer(sunWeight));

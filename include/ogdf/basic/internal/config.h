@@ -115,7 +115,8 @@ using std::to_string;
 
 #if OGDF_HAS_CPP_ATTRIBUTE(deprecated)
 # undef OGDF_DEPRECATED
-# define OGDF_DEPRECATED(reason) [[deprecated(reason)]]
+//	# define OGDF_DEPRECATED(reason) [[deprecated(reason)]]
+	# define OGDF_DEPRECATED(reason) 
 #elif defined(_MSC_VER)
 # undef OGDF_DEPRECATED
 # define OGDF_DEPRECATED(reason) __declspec(deprecated(reason))

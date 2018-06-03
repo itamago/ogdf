@@ -69,7 +69,7 @@ static int drop_col_zeros (int ncheckcols, int *checkcols,
 		    int *hincol, presolvehlink *clink,
 		    dropped_zero *actions)
 {
-  typedef dropped_zero action;
+//  typedef dropped_zero action;
   int nactions = 0;
   int i;
 

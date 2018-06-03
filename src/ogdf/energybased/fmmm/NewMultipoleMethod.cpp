@@ -1405,7 +1405,7 @@ void NewMultipoleMethod::find_small_cell_by_formula(QuadTreeNodeNM* act_ptr, DPo
 			int k, a1, a2, A, j_minus_k;
 			double h1;
 			int Sm_x_level, Sm_y_level;
-			int Sm_x_position, Sm_y_position;
+			int Sm_x_position=0, Sm_y_position=0;
 
 			if (min.m_x != max.m_x) {
 				// calculate Sm_x_level and Sm_x_position
